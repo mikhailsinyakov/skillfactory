@@ -9,7 +9,8 @@ def score_game(game_core, num_range=(1, 101)):
     :param num_range: диапазон чисел для определения случайных чисел
     :return:
     """
-    np.random.seed(1)  # фиксируем RANDOM SEED, чтобы эксперимент был воспроизводим!
+    np.random.seed(
+        1)  # фиксируем RANDOM SEED, чтобы эксперимент был воспроизводим!
     random_array = np.random.randint(num_range[0], num_range[1], size=1000)
     count_ls = [game_core(number, num_range) for number in random_array]
     score = int(np.mean(count_ls))
